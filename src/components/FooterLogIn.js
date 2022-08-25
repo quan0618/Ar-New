@@ -1,0 +1,53 @@
+/* ar-brown App (C) 2021 arbrown.co.jp All rights reserved.
+ *******************************************************************************
+ * Program ID:  FooterLogIn.js
+ * $Revision:   Ver1.0
+ * $Modtime:    $
+ *******************************************************************************
+ * Author      (作成／更新年月日、担当者)
+ *  2021/08/01 Rayoo)li : 新規作成
+ *
+ * Summary FooterLogIn
+ *
+ * Instructions / Preconditions
+ *  なし
+ *
+ *******************************************************************************
+ */
+import React, { Container } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+  footer: {
+    'text-align': 'center',
+    margin: '0px 0 0 0',
+    padding: '0px 0px 0px 0px',
+    background: 'transparent no-repeat center center',
+    'background-color': '#99613E',
+    bottom: '0vh',
+    'margin-bottom': '0vh',
+    'border-width': '1px 0 0',
+    position: 'relative',
+    width: '100%',
+  }
+}));
+const FooterLogIn = () => {
+  const classes = useStyles();
+  const year = new Date().getFullYear()
+  return (
+		<Container style={{ backgroundColor: '','minWidth': '85vw'}}>
+      <footer className={classes.footer}>
+        <div style={{ fontSize: 10, color: '#FFFFFF' }} >
+          ｜<Link to='/privacy' style={{ color: '#FFFFFF', margin:'0 40px 0 0px' }} >プライバシーポリシー</Link>
+          ｜<Link to='/terms' style={{ color: '#FFFFFF' , margin:'0 40px 0 0px'}} >サイトポリシー</Link>
+          ｜<a style={{ color: '#FFFFFF', margin:'0 40px 0 0px' }} href="http://www.arbrown.com" target="_blank" rel="noreferrer">CORPORATE SITE</a>
+          <br />
+          Copyright &copy; {year}, ARBROWN CO.,LTD, All Rights Reserved.
+        </div>
+      </footer>
+    </Container>
+  )
+}
+
+export default FooterLogIn

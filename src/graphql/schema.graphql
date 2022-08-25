@@ -1,0 +1,56 @@
+type ArInventory @model
+  @key(fields:["id", "Agency_Price_Group"]) 
+  @key(name: "PriceGroup_Index", fields:["Agency_Price_Group"], queryField: "AgencyGroupInvList") 
+  @key(name: "LastUpdate_Index", fields:["lastupdate"], queryField: "LastUpdateList") 
+{
+  id: ID!
+  Agency_Price_Group: ID!
+  Product_Code: String!
+	Supplier: String
+	Product_Name_j: String
+  Quantity: String
+ 	Capacity_Display: String
+	Catarog_Price: String
+	Wholes_Rate: String
+	Wholes_Price: String
+	Delivery_Term: String
+	Storage_Temp: String
+	Capacity_Unit: String
+	Capacity_Value: String
+	Product_Name_e: String
+  Plant_Name: String
+  Wharehouse_Name:  String
+  Category1:  String
+  Category2:  String
+  Product_Group1:  String
+  Product_Group2:  String
+  Supplier_LotNo: String
+  Expiration_date:  String
+  lastupdate: AWSDateTime
+  updatedAt: AWSDateTime
+  createdAt: AWSDateTime
+}
+type ArAgency @model
+  @key(fields:["Agency_id", "SubId"]) 
+  @key(name: "eMail-Index", fields:["eMail"], queryField: "customerByeMail") 
+{
+  Agency_id: ID!
+  SubId: String!
+  Agency_Price_Group: ID!
+  Company_Name: String
+  eMail: String!
+  updatedAt: AWSDateTime 
+  createdAt: AWSDateTime
+}
+
+type ArCampaign @model
+  @key(fields:["id"]) 
+{
+  id: ID!
+  Title: String
+  TermFrom: String!
+  TermTo: String!
+  Text: String
+  updatedAt: AWSDateTime 
+  createdAt: AWSDateTime
+}
